@@ -170,9 +170,9 @@
     
             function Invite() // вызываем метод ВК
             {
-            vkBridge.send('VKWebAppAddToProfile',
+            vkBridge.send('VKWebAppShare',
             {
-              ttl: 0
+              link: 'https://vk.com/app51803325'
             })
               .then((data) => {
                 if (data.result) {
