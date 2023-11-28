@@ -170,17 +170,18 @@
     
             function Invite() // вызываем метод ВК
             {
-            vkBridge.send('VKWebAppShowInviteBox')
-              .then((data) => {
-                if (data.success) {
-                 
-                }
-              })
-              .catch((error) => {
-                console.log(error); // Ошибка
-              
-              });
-    
+              bridge.send('VKWebAppAddToProfile', {
+  ttl: 1666076431
+  })
+  .then((data) => { 
+    if (data.visibility) {
+      // Кнопка добавлена в профиль
+    }
+  })
+  .catch((error) => {
+    // Ошибка
+    console.log(error);
+  });
             }
 
             function Fav() // вызываем метод ВК
